@@ -100,6 +100,7 @@ Collisions:
 ### Challenges:
 - **Time Constraints:** Implementing all the features I envisioned wasn’t possible due to the limited timeframe.
 - **Game Polish:** Refining the game wasn't as easy as I thought. Especially the enemy still needs more polishing.
+- **Useful Mechanics:** Despite being able to manipulate time, it was difficult to make the use of it feel rewarding.
 
 ### Lessons Learned:
 - **Prototyping Matters:** Testing early prototypes gives you a solid foundation to build on.
