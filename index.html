@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Timeless Ascension</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+  <h1>Timeless Ascension</h1>
+  <!-- further HTML elements, that should maybe be displayed above your game. E.g. Healtbar, .... -->
+  <!-- <div id="healthDisplay">Health:</div> -->
+  <!-- <progress id="health" value="90" max="100"></progress> -->
+  <div id="startScreen">
+    <button id="startGame">START GAME</button>
+    <button id="howToPlay">HOW TO PLAY</button>
+  </div>
+
+  <div id="howToPlayScreen">
+    <button id="back">BACK</button>
+  </div>
+
+  <!-- <div id="winScreen">
+    <button class="restartGame">RESTART GAME</button>
+    <button class="endGame">END</button>
+  </div>
+
+  <div id="loseScreen">
+    <button class="restartGame">RESTART GAME</button>
+    <button class="endGame">END</button>
+  </div> -->
+
+  <div id="winScreen">
+    <button id="restartGame">RESTART GAME</button>
+    <button id="endGame">END</button>
+  </div>
+
+  <div id="loseScreen">
+    <button id="retryGame">RESTART GAME</button>
+    <button id="finishGame">END</button>
+  </div>
+
+  <div id="gameContainer">
+    <!-- further HTML elements, that should be behind your game. e.g. Background image, .... -->
+    <div id="background"></div>
+    <canvas id="canvas" width="625" height="621"></canvas>
+    <!-- change the size attributes of your canvas according to your game -->
+    <!-- further HTML elements, that should overlay your game. e.g. Main Screen, Game Over screen, .... -->
+    <!-- <div id="gameOverScreen"></div> -->
+    <!-- <div id="mainScreen"></div> -->
+  </div>
+  <!-- further HTML elements, that should maybe be displayed below your game. E.g. Score, .... -->
+  <div class="time"></div>
+  <!-- <div id="scoreDisplay">Score: </div> -->
+
+  <script type="module" src="./scripts/modules/global.js"></script>
+  <script type="module" src="./scripts/modules/input.js"></script>
+  <script type="module" src="./scripts/modules/main.js"></script>
+
+</body>
+
+</html>
