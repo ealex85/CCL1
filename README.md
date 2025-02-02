@@ -86,7 +86,7 @@ Collisions:
 
 ## 🐛 **Bugs & Known Issues:**
 - When starting the game, enemy might not be on the canvas -> simply refresh the page and enemy should appear
-- Enemy collision: walks around you until it a certain threshold is triggered
+- Enemy collision: walks around you until a certain threshold is triggered
 - Enemy attack patterns: enemy can hit you even if the animation isn't fully played
 
 ---
