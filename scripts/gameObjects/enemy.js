@@ -54,6 +54,8 @@ class Enemy extends BaseGameObject {
     chasePlayer = function () {
         let bounds = this.getBoxBounds();
         let playerBounds = global.centerAttackTrigger.getBoxBounds();
+
+        // enemy goes from right to left
         if (bounds.left > playerBounds.right && this.xVelocity > 0) {
             this.xVelocity = -this.xVelocity;
             this.switchCurrentSprites(9, 11);
@@ -72,12 +74,15 @@ class Enemy extends BaseGameObject {
             this.yVelocity = -this.yVelocity;
         }
 
+        // ---- when close enough for attacks ----
+        // enemy approaches from the left side
         if (Math.abs(this.y - global.playerObject.y) < 3 && (this.xVelocity > 0 && Math.abs(bounds.right - playerBounds.left) < 20)) {
             this.yVelocity = 0;
             this.xVelocity = 0;
             global.enemyObject.switchCurrentSprites(3, 8);
 
         }
+        // enemy approaches from the right side
         if (Math.abs(this.y - global.playerObject.y) < 3 && this.xVelocity < 0 && Math.abs(playerBounds.right - bounds.left) < 20) {
             this.xVelocity = 0;
             this.yVelocity = 0;
@@ -87,18 +92,15 @@ class Enemy extends BaseGameObject {
     }
 
     generateVelocity = function () {
-        this.elapsedTimeAfterStop = 0;
         this.xVelocity = 80;
         this.yVelocity = 80;
 
         // apply time-manipulation
         if (this.slowActive) {
-            // this.storePreviousVelocity();
             this.xVelocity *= this.slowDownRate;
             this.yVelocity *= this.slowDownRate;
         }
         else if (this.speedActive) {
-            // this.storePreviousVelocity();
             this.xVelocity *= this.speedUpRate;
             this.yVelocity *= this.speedUpRate;
         }
@@ -121,6 +123,7 @@ class Enemy extends BaseGameObject {
                 global.playerObject.hp = 0;
                 loseScreen.style.display = 'flex';
             }
+
             this.elapsedTimeAfterAttack = 0;
             return;
         }
@@ -133,6 +136,7 @@ class Enemy extends BaseGameObject {
                 global.playerObject.hp = 0;
                 loseScreen.style.display = 'flex';
             }
+
             this.elapsedTimeAfterAttack = 0;
             return;
         }
@@ -145,6 +149,7 @@ class Enemy extends BaseGameObject {
                 global.playerObject.hp = 0;
                 loseScreen.style.display = 'flex';
             }
+
             this.elapsedTimeAfterAttack = 0;
         }
     }
@@ -155,6 +160,7 @@ class Enemy extends BaseGameObject {
     }
 
     slowDownTime = function () {
+        // do nothing if player is already dead
         if (global.playerObject.hp <= 0) {
             global.playerObject.hp = 0;
             return;
