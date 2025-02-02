@@ -9,7 +9,7 @@ class AttackTrigger extends BaseGameObject {
     collidedWithEnemy = false;
 
     draw = function () {
-        global.ctx.fillRect(this.x, this.y, this.width, this.height);
+        //global.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     update = function () {
